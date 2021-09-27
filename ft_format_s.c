@@ -1,26 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   libftprintf.h                                      :+:    :+:            */
+/*   ft_format_s.c                                      :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: abeznik <abeznik@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/11/20 18:43:17 by abeznik       #+#    #+#                 */
-/*   Updated: 2021/09/27 18:41:21 by abeznik       ########   odam.nl         */
+/*   Created: 2021/09/27 17:18:36 by abeznik       #+#    #+#                 */
+/*   Updated: 2021/09/27 18:13:40 by abeznik       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFTPRINTF_H
-# define LIBFTPRINTF_H
+#include "libftprintf.h"
 
-# include "libft/libft.h"
+#include <stdio.h>
+#include <stdarg.h>
 
-# include <stdarg.h>
+char	*ft_format_s(va_list args)
+{
+	char	*s;
 
-int		ft_printf(const char *str, ...);
-
-char	ft_format_c(va_list args);
-
-char	*ft_format_s(va_list args);
-
-#endif
+	s = va_arg(args, char *);
+	return (s);
+}
