@@ -1,0 +1,45 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         ::::::::             #
+#    comments.txt                                       :+:    :+:             #
+#                                                      +:+                     #
+#    By: abeznik <abeznik@student.codam.nl>           +#+                      #
+#                                                    +#+                       #
+#    Created: 2021/09/27 12:26:22 by abeznik       #+#    #+#                  #
+#    Updated: 2021/09/27 12:32:24 by abeznik       ########   odam.nl          #
+#                                                                              #
+# **************************************************************************** #
+
+description
+    Write a library that contains ft_printf, a function
+    that will mimic the real printf
+
+program name
+    libftprintf.a
+
+turn in files
+    *.c, */*.c, *.h, */*.h, Makefile
+
+Makefile
+    all, clean, fclean, re, bonus
+
+external functions
+    malloc, free, write, va_start, va_arg, va_copy, va_end
+
+libft authorized
+
+prototype
+    int ft_printf(const char *, ...)
+
+conversions
+    cspdiuxX%
+
+    %c  single char
+    %s  string of char
+    %p  void * pointer arg printed in hex
+    %d  decimal (base 10) number
+    %i  integer base 10
+    %u  unsigned decimal (base 10) number
+    %x  hex (base 16) lowercase
+    %X  hex (base 16) uppercase
+    %%  percent sign

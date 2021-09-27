@@ -6,7 +6,7 @@
 /*   By: abeznik <abeznik@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/20 18:43:17 by abeznik       #+#    #+#                 */
-/*   Updated: 2020/11/20 19:04:34 by abeznik       ########   odam.nl         */
+/*   Updated: 2021/09/27 12:24:04 by abeznik       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,6 @@
 
 # include "./libft/libft.h"
 
-int     ft_printf(const char *str, ...);
+int		ft_printf(const char *str, ...);
 
 #endif
