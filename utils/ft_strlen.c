@@ -1,26 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_format_s.c                                      :+:    :+:            */
+/*   ft_strlen.c                                        :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: abeznik <abeznik@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/09/27 17:18:36 by abeznik       #+#    #+#                 */
-/*   Updated: 2021/09/28 16:05:53 by abeznik       ########   odam.nl         */
+/*   Created: 2020/11/15 15:54:18 by abeznik       #+#    #+#                 */
+/*   Updated: 2021/09/28 18:19:51 by abeznik       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "utils.h"
 
-#include <stdio.h>
-#include <stdarg.h>
-
-char	*ft_format_s(va_list args)
+size_t	ft_strlen(const char *s)
 {
-	char	*s;
+	size_t	len;
 
-	printf("fornat_s\n");
-	s = va_arg(args, char *);
-	printf("ft_printf str: %s\n", s);
-	return (s);
+	len = 0;
+	while (s[len])
+		len++;
+	return (len);
 }

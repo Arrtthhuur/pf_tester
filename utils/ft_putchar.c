@@ -1,26 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_format_s.c                                      :+:    :+:            */
+/*   ft_putchar.c                                       :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: abeznik <abeznik@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/09/27 17:18:36 by abeznik       #+#    #+#                 */
-/*   Updated: 2021/09/28 16:05:53 by abeznik       ########   odam.nl         */
+/*   Created: 2020/11/23 10:25:57 by abeznik       #+#    #+#                 */
+/*   Updated: 2021/09/28 16:01:17 by abeznik       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "utils.h"
 
-#include <stdio.h>
-#include <stdarg.h>
+#include <unistd.h> // write
 
-char	*ft_format_s(va_list args)
+void	ft_putchar(char c)
 {
-	char	*s;
-
-	printf("fornat_s\n");
-	s = va_arg(args, char *);
-	printf("ft_printf str: %s\n", s);
-	return (s);
+	write(1, &c, 1);
 }

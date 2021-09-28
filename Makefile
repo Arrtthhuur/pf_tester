@@ -6,13 +6,23 @@
 #    By: abeznik <abeznik@student.codam.nl>           +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/11/20 18:39:56 by abeznik       #+#    #+#                  #
-#    Updated: 2021/09/27 18:44:30 by abeznik       ########   odam.nl          #
+#    Updated: 2021/09/28 18:26:59 by abeznik       ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
 SRCS	=	ft_printf.c $\
 			ft_format_s.c $\
 			ft_format_c.c $\
+			utils/ft_putchar.c $\
+			utils/ft_putstr.c $\
+			utils/ft_strjoin.c $\
+			utils/ft_memmove.c $\
+			utils/ft_substr.c $\
+			utils/ft_calloc.c $\
+			utils/ft_memset.c $\
+			utils/ft_bzero.c $\
+			utils/ft_strdup.c $\
+			utils/ft_strlen.c $\
 
 MAINS	=	main.c
 
@@ -45,7 +55,7 @@ oclean:
 	@echo "[INFO] Cleaned .out!"
 
 printf:
-	$(CC) $(SRCS) $(MAINS) ./libft/libft.a
+	$(CC) $(SRCS) $(MAINS)
 
 debug:
 	$(CC) -g3 $(SRCS) $(MAINS)

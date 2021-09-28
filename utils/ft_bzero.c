@@ -1,26 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_format_s.c                                      :+:    :+:            */
+/*   ft_bzero.c                                         :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: abeznik <abeznik@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/09/27 17:18:36 by abeznik       #+#    #+#                 */
-/*   Updated: 2021/09/28 16:05:53 by abeznik       ########   odam.nl         */
+/*   Created: 2020/10/26 16:22:42 by abeznik       #+#    #+#                 */
+/*   Updated: 2021/09/28 18:20:30 by abeznik       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "utils.h"
 
-#include <stdio.h>
-#include <stdarg.h>
-
-char	*ft_format_s(va_list args)
+void	ft_bzero(void *s, size_t n)
 {
-	char	*s;
-
-	printf("fornat_s\n");
-	s = va_arg(args, char *);
-	printf("ft_printf str: %s\n", s);
-	return (s);
+	ft_memset(s, 0, n);
 }

@@ -1,26 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_format_s.c                                      :+:    :+:            */
+/*   ft_substr.c                                        :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: abeznik <abeznik@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/09/27 17:18:36 by abeznik       #+#    #+#                 */
-/*   Updated: 2021/09/28 16:05:53 by abeznik       ########   odam.nl         */
+/*   Created: 2020/11/01 11:03:44 by abeznik       #+#    #+#                 */
+/*   Updated: 2021/09/28 18:20:07 by abeznik       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "utils.h"
 
-#include <stdio.h>
-#include <stdarg.h>
-
-char	*ft_format_s(va_list args)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char	*s;
+	size_t	i;
+	char	*ptr;
 
-	printf("fornat_s\n");
-	s = va_arg(args, char *);
-	printf("ft_printf str: %s\n", s);
-	return (s);
+	if (!s)
+		return (NULL);
+	if (start + 1 > ft_strlen(s) || !len)
+		return (ft_strdup(""));
+	ptr = (char *)ft_calloc(len + 1, sizeof(char));
+	if (!ptr)
+		return (NULL);
+	i = 0;
+	while (len > i && s[start + i])
+	{
+		ptr[i] = s[start + i];
+		i++;
+	}
+	return (ptr);
 }

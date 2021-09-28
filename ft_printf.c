@@ -6,16 +6,15 @@
 /*   By: abeznik <abeznik@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/20 18:40:57 by abeznik       #+#    #+#                 */
-/*   Updated: 2021/09/27 18:41:19 by abeznik       ########   odam.nl         */
+/*   Updated: 2021/09/28 18:27:32 by abeznik       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-#include "libft/libft.h"
-
-#include <stdio.h>
-#include <stdarg.h>
+// #include <stdarg.h>
+#include <stdio.h> // printf
+#include <unistd.h> // write
 
 static int	ft_parsing(const char *str)
 {
@@ -39,7 +38,6 @@ int	ft_printf(const char *fmt, ...)
 {
 	va_list	args;
 	int		d;
-	int		len;
 	int		format;
 	char	c;
 	char	*s;
@@ -48,23 +46,31 @@ int	ft_printf(const char *fmt, ...)
 	format = ft_parsing(fmt);
 	if (format == 1)
 	{
-		printf("Formatting c.\n");
 		c = ft_format_c(args);
-		printf("ft_printf char: %c\n", c);
+		while (*fmt)
+		{
+			ft_putchar(*fmt);
+			if (*fmt == '%')
+			{
+				
+				ft_putchar(c);
+			}
+			*fmt++;
+		}
 	}
 	else if (format == 2)
 	{
-		printf("Formatting s.\n");
 		s = ft_format_s(args);
-		printf("ft_printf str: %s\n", s);
+		while (*fmt)
+		{
+			ft_putchar(*fmt);
+			if (*fmt == '%')
+			{
+				ft_putstr(s);
+			}
+			*fmt++;
+		}
 	}
-	len = 0;
-	while (fmt[len])
-	{
-		ft_putchar(fmt[len]);
-		len++;
-	}
-	write(1, "\n", 1);
 	va_end(args);
 	return (0);
 }
