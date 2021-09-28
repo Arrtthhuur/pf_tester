@@ -6,7 +6,7 @@
 /*   By: abeznik <abeznik@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/20 18:40:57 by abeznik       #+#    #+#                 */
-/*   Updated: 2021/09/28 18:27:32 by abeznik       ########   odam.nl         */
+/*   Updated: 2021/09/28 19:06:24 by abeznik       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,37 +39,43 @@ int	ft_printf(const char *fmt, ...)
 	va_list	args;
 	int		d;
 	int		format;
+	int		len;
 	char	c;
 	char	*s;
+	char	*tmp;
+	char	*output;
 
 	va_start(args, fmt);
 	format = ft_parsing(fmt);
 	if (format == 1)
 	{
 		c = ft_format_c(args);
-		while (*fmt)
+		len = 0;
+		while (fmt[len])
 		{
-			ft_putchar(*fmt);
-			if (*fmt == '%')
-			{
-				
-				ft_putchar(c);
-			}
-			*fmt++;
+			// if (fmt[len] == '%')
+			// {
+			// 	tmp = ft_substr(fmt, 0, len);
+			// 	output = ft_strjoin(tmp, c);
+			// 	printf("%s", output);
+			// }
+			len++;
 		}
 	}
 	else if (format == 2)
 	{
 		s = ft_format_s(args);
-		while (*fmt)
+		len = 0;
+		while (fmt[len])
 		{
-			ft_putchar(*fmt);
-			if (*fmt == '%')
+			if (fmt[len] == '%')
 			{
-				ft_putstr(s);
+				tmp = ft_substr(fmt, 0, len);
+				output = ft_strjoin(tmp, s);
 			}
-			*fmt++;
+			len++;
 		}
+		printf("out: %s", output);
 	}
 	va_end(args);
 	return (0);

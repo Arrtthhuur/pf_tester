@@ -6,7 +6,7 @@
 /*   By: abeznik <abeznik@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/09/27 12:32:53 by abeznik       #+#    #+#                 */
-/*   Updated: 2021/09/28 18:14:28 by abeznik       ########   odam.nl         */
+/*   Updated: 2021/09/28 18:59:02 by abeznik       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,11 +35,11 @@ int	main(int argc, char *argv[])
 	{
 		// printf("The command had no others arguments.\n");
 	}
-	c = 'x';
-	ft_printf("coucou %c", c);
+	// c = 'x';
+	// ft_printf("coucou %c", c);
 
-	// s = "bonjour";
-	// ft_printf("coucou %s", s);
+	s = "bonjour";
+	ft_printf("coucou %s salut %s", s, s);
 
 	// d = 1;
 	// ft_printf("%d", d);
