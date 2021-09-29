@@ -6,15 +6,8 @@
 #    By: abeznik <abeznik@student.codam.nl>           +#+                      #
 #                                                    +#+                       #
 #    Created: 2021/09/28 18:40:31 by abeznik       #+#    #+#                  #
-#    Updated: 2021/09/28 18:43:27 by abeznik       ########   odam.nl          #
+#    Updated: 2021/09/29 16:04:57 by abeznik       ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
-int	ft_printf(const char *fmt, ...)
-{
-    init va list
 
-    parse fmt for different formats
-        => split ? to make != arrays
-        compute format based on flag
-}

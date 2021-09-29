@@ -1,24 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_format_s.c                                      :+:    :+:            */
+/*   ft_memcmp.c                                        :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: abeznik <abeznik@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/09/27 17:18:36 by abeznik       #+#    #+#                 */
-/*   Updated: 2021/09/29 12:13:51 by abeznik       ########   odam.nl         */
+/*   Created: 2020/10/26 16:37:54 by abeznik       #+#    #+#                 */
+/*   Updated: 2021/09/29 16:10:05 by abeznik       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "utils.h"
 
-#include <stdio.h>
-#include <stdarg.h>
-
-char	*ft_format_s(va_list args)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	char	*s;
+	unsigned char	*str1;
+	unsigned char	*str2;
 
-	s = va_arg(args, char *);
-	return (s);
+	str1 = (unsigned char *)s1;
+	str2 = (unsigned char *)s2;
+	while (n > 0)
+	{
+		if (*str1 != *str2)
+			return (*str1 - *str2);
+		str1++;
+		str2++;
+		n--;
+	}
+	return (0);
 }

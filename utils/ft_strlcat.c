@@ -1,42 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_parsing.c                                       :+:    :+:            */
+/*   ft_strlcat.c                                       :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: abeznik <abeznik@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/09/27 17:34:00 by abeznik       #+#    #+#                 */
-/*   Updated: 2021/09/29 13:52:59 by abeznik       ########   odam.nl         */
+/*   Created: 2020/09/22 13:32:16 by abeznik       #+#    #+#                 */
+/*   Updated: 2021/09/29 12:48:19 by abeznik       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "utils.h"
 
-#include <stdio.h>
-#include <stdarg.h>
-
-int	ft_parsing(char *str)
+size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-	int	format;
-	int	pos;
+	size_t	i;
+	size_t	d_len;
+	size_t	s_len;
 
-	format = 0;
-	pos = 0;
-	while (str[pos] != '\0')
+	s_len = ft_strlen(src);
+	d_len = ft_strlen(dst);
+	i = 0;
+	if (d_len > dstsize)
+		return (dstsize + s_len);
+	if (d_len + 1 >= dstsize)
+		return (d_len + s_len);
+	while (dstsize - 1 > d_len + i && src[i])
 	{
-		if (str[pos] == '%' && str[pos + 1] == 'c')
-		{
-			format = 1;
-		}
-		if (str[pos] == '%' && str[pos + 1] == 's')
-		{
-			format = 2;
-		}
-		if (str[pos] == '%' && str[pos + 1] == 'd')
-		{
-			format = 3;
-		}
-		*str++;
+		dst[d_len + i] = src[i];
+		i++;
 	}
-	return (format);
+	dst[d_len + i] = '\0';
+	return (d_len + s_len);
 }

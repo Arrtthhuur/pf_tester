@@ -1,24 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_format_s.c                                      :+:    :+:            */
+/*   ft_format_p.c                                      :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: abeznik <abeznik@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/09/27 17:18:36 by abeznik       #+#    #+#                 */
-/*   Updated: 2021/09/29 12:13:51 by abeznik       ########   odam.nl         */
+/*   Created: 2021/09/29 16:31:13 by abeznik       #+#    #+#                 */
+/*   Updated: 2021/09/29 17:04:39 by abeznik       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-#include <stdio.h>
-#include <stdarg.h>
+#include <stdio.h> // printf
+#include <stdarg.h> // va_list
 
-char	*ft_format_s(va_list args)
+void	*ft_format_p(va_list args)
 {
-	char	*s;
+	void	*p;
 
-	s = va_arg(args, char *);
-	return (s);
+	p = va_arg(args, void *);
+	return (p);
 }

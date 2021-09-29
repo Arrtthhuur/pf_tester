@@ -6,7 +6,7 @@
 /*   By: abeznik <abeznik@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/09/28 15:53:54 by abeznik       #+#    #+#                 */
-/*   Updated: 2021/09/28 18:24:59 by abeznik       ########   odam.nl         */
+/*   Updated: 2021/09/29 16:10:31 by abeznik       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,9 @@ void	ft_bzero(void *s, size_t n);
 size_t	ft_strlen(const char *s);
 
 char	*ft_strdup(const char *s1);
+
+size_t	ft_strlcat(char *dst, const char *src, size_t dstsize);
+
+int		ft_memcmp(const void *s1, const void *s2, size_t n);
 
 #endif

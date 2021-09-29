@@ -6,7 +6,7 @@
 /*   By: abeznik <abeznik@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/20 18:40:57 by abeznik       #+#    #+#                 */
-/*   Updated: 2021/09/28 19:06:24 by abeznik       ########   odam.nl         */
+/*   Updated: 2021/09/29 17:11:35 by abeznik       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,66 +16,153 @@
 #include <stdio.h> // printf
 #include <unistd.h> // write
 
-static int	ft_parsing(const char *str)
-{
-	int	format;
-	int	pos;
+// static int	ft_parsing(const char *str)
+// {
+// 	int	format;
+// 	int	pos;
 
-	format = 0;
-	pos = 0;
-	while (str[pos] != '\0')
-	{
-		if (str[pos] == '%' && str[pos + 1] == 'c')
-			format = 1;
-		if (str[pos] == '%' && str[pos + 1] == 's')
-			format = 2;
-		pos++;
-	}
-	return (format);
-}
+// 	format = 0;
+// 	pos = 0;
+// 	while (str[pos] != '\0')
+// 	{
+// 		if (str[pos] == '%' && str[pos + 1] == 'c')
+// 			format = 1;
+// 		if (str[pos] == '%' && str[pos + 1] == 's')
+// 			format = 2;
+// 		if (str[pos] == '%' && str[pos + 1] == 'd')
+// 			format = 3;
+// 		pos++;
+// 	}
+// 	return (format);
+// }
+
+// int	ft_printf(const char *fmt, ...)
+// {
+// 	va_list	args;
+// 	int		d;
+// 	int		format;
+// 	int		len;
+// 	char	c;
+// 	char	*s;
+
+// 	va_start(args, fmt);
+// 	format = ft_parsing(fmt);
+// 	if (format == 1)
+// 	{
+// 		c = ft_format_c(args);
+// 		len = 0;
+// 		while (fmt[len])
+// 		{
+// 			if (fmt[len] == '%' && fmt[len + 1] == 'c')
+// 			{
+// 				// tmp = ft_substr(fmt, 0, len);
+// 				// fmt_left = ft_strdup(fmt + len + 2);
+// 				// tmp[len] = c;
+// 				// output = ft_strjoin(tmp, fmt_left);
+// 				ft_putchar(c);
+// 				len++;
+// 			}
+// 			else
+// 			{
+// 				ft_putchar(fmt[len]);
+// 			}
+// 			len++;
+// 		}
+// 	}
+// 	else if (format == 2)
+// 	{
+// 		s = ft_format_s(args);
+// 		len = 0;
+// 		while (fmt[len])
+// 		{
+// 			if (fmt[len] == '%' && fmt[len + 1] == 's')
+// 			{
+// 				// tmp = ft_substr(fmt, 0, len);
+// 				// fmt_left = ft_strdup(fmt + len + 2);
+// 				// output_tmp = ft_strjoin(tmp, s);
+// 				// output = ft_strjoin(output_tmp, fmt_left);
+// 				ft_putstr(s);
+// 				len++;
+// 			}
+// 			else
+// 			{
+// 				ft_putchar(fmt[len]);
+// 			}
+// 			len++;
+// 		}
+// 	}
+// 	else if (format == 3)
+// 	{
+// 		d = ft_format_d(args);
+// 		len = 0;
+// 		while (fmt[len])
+// 		{
+// 			if (fmt[len] == '%' && fmt[len + 1] == 'd')
+// 			{
+// 				// tmp = ft_substr(fmt, 0, len);
+// 				// fmt_left = ft_strdup(fmt + len + 2);
+// 				d = d + '0';
+// 				// tmp[len] = d_tmp;
+// 				// output = ft_strjoin(tmp, fmt_left);
+// 				ft_putchar(d);
+// 				len++;
+// 			}
+// 			else
+// 			{
+// 				ft_putchar(fmt[len]);
+// 			}
+// 			len++;
+// 		}
+// 	}
+// 	// ft_putstr("output: ");
+// 	// ft_putstr(output);
+// 	va_end(args);
+// 	return (0);
+// }
 
 int	ft_printf(const char *fmt, ...)
 {
 	va_list	args;
 	int		d;
-	int		format;
 	int		len;
 	char	c;
 	char	*s;
-	char	*tmp;
-	char	*output;
+	void	*p;
+	char	*cp;
 
 	va_start(args, fmt);
-	format = ft_parsing(fmt);
-	if (format == 1)
+	len = 0;
+	while (fmt[len])
 	{
-		c = ft_format_c(args);
-		len = 0;
-		while (fmt[len])
+		if (fmt[len] == '%' && fmt[len + 1] == 'c')
 		{
-			// if (fmt[len] == '%')
-			// {
-			// 	tmp = ft_substr(fmt, 0, len);
-			// 	output = ft_strjoin(tmp, c);
-			// 	printf("%s", output);
-			// }
+			c = ft_format_c(args);
+			ft_putchar(c);
 			len++;
 		}
-	}
-	else if (format == 2)
-	{
-		s = ft_format_s(args);
-		len = 0;
-		while (fmt[len])
+		else if (fmt[len] == '%' && fmt[len + 1] == 's')
 		{
-			if (fmt[len] == '%')
-			{
-				tmp = ft_substr(fmt, 0, len);
-				output = ft_strjoin(tmp, s);
-			}
+			s = ft_format_s(args);
+			ft_putstr(s);
 			len++;
 		}
-		printf("out: %s", output);
+		else if (fmt[len] == '%' && fmt[len + 1] == 'd')
+		{
+			d = ft_format_d(args);
+			d = d + '0';
+			ft_putchar(d);
+			len++;
+		}
+		else if (fmt[len] == '%' && fmt[len + 1] == 'p')
+		{
+			p = ft_format_p(args);
+			cp = (char *) &p;
+			ft_putstr(cp);
+			len++;
+		}
+		else
+			ft_putchar(fmt[len]);
+		len++;
 	}
 	va_end(args);
 	return (0);
