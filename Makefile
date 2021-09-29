@@ -6,7 +6,7 @@
 #    By: abeznik <abeznik@student.codam.nl>           +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/11/20 18:39:56 by abeznik       #+#    #+#                  #
-#    Updated: 2021/09/29 16:35:15 by abeznik       ########   odam.nl          #
+#    Updated: 2021/09/29 20:19:40 by abeznik       ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,17 +15,14 @@ SRCS	=	ft_printf.c $\
 			ft_format_c.c $\
 			ft_format_d.c $\
 			ft_format_p.c $\
+			ft_format_x.c $\
+			ft_format_i.c $\
+			ft_format_u.c $\
 			utils/ft_putchar.c $\
 			utils/ft_putstr.c $\
-			utils/ft_strjoin.c $\
-			utils/ft_memmove.c $\
-			utils/ft_substr.c $\
-			utils/ft_calloc.c $\
-			utils/ft_memset.c $\
-			utils/ft_bzero.c $\
-			utils/ft_strdup.c $\
-			utils/ft_strlen.c $\
-			utils/ft_strlcat.c $\
+			utils/ft_putnbr.c $\
+			utils/ft_hex_conv.c $\
+			utils/ft_tolower.c $\
 
 MAINS	=	main.c
 

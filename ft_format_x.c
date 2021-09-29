@@ -1,27 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_memset.c                                        :+:    :+:            */
+/*   ft_format_x.c                                      :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: abeznik <abeznik@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/10/26 16:20:05 by abeznik       #+#    #+#                 */
-/*   Updated: 2021/09/28 18:20:45 by abeznik       ########   odam.nl         */
+/*   Created: 2021/09/29 18:29:15 by abeznik       #+#    #+#                 */
+/*   Updated: 2021/09/29 19:48:14 by abeznik       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "utils.h"
+#include "libftprintf.h"
 
-void	*ft_memset(void *b, int c, size_t len)
+#include <stdio.h> // printf
+#include <stdarg.h> // va_list
+
+int	ft_format_xX(va_list args)
 {
-	unsigned char	*str;
+	int	i;
 
-	str = b;
-	while (len > 0)
-	{
-		*str = (unsigned char)c;
-		str++;
-		len--;
-	}
-	return (b);
+	i = va_arg(args, int);
+	return (i);
 }

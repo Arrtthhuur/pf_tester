@@ -1,34 +1,49 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_substr.c                                        :+:    :+:            */
+/*   ft_putnbr.c                                        :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: abeznik <abeznik@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/11/01 11:03:44 by abeznik       #+#    #+#                 */
-/*   Updated: 2021/09/28 18:20:07 by abeznik       ########   odam.nl         */
+/*   Created: 2020/11/23 10:29:13 by abeznik       #+#    #+#                 */
+/*   Updated: 2021/09/29 20:02:08 by abeznik       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <unistd.h>
+
 #include "utils.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+void	recursive(int nb)
 {
-	size_t	i;
-	char	*ptr;
-
-	if (!s)
-		return (NULL);
-	if (start + 1 > ft_strlen(s) || !len)
-		return (ft_strdup(""));
-	ptr = (char *)ft_calloc(len + 1, sizeof(char));
-	if (!ptr)
-		return (NULL);
-	i = 0;
-	while (len > i && s[start + i])
+	if (nb < 0)
 	{
-		ptr[i] = s[start + i];
-		i++;
+		ft_putchar('-');
+		recursive(nb * -1);
 	}
-	return (ptr);
+	else if (nb < 10)
+	{
+		nb += '0';
+		ft_putchar(nb);
+	}
+	else
+	{
+		recursive(nb / 10);
+		nb = nb % 10 + '0';
+		ft_putchar(nb);
+	}
+}
+
+void	ft_putnbr(int nb)
+{
+	if (nb == -2147483648)
+	{
+		ft_putchar('-');
+		ft_putchar('2');
+		recursive(147483648);
+	}
+	else
+	{
+		recursive(nb);
+	}
 }

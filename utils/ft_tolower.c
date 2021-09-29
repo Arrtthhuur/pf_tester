@@ -1,18 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_bzero.c                                         :+:    :+:            */
+/*   ft_tolower.c                                       :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: abeznik <abeznik@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/10/26 16:22:42 by abeznik       #+#    #+#                 */
-/*   Updated: 2021/09/28 18:20:30 by abeznik       ########   odam.nl         */
+/*   Created: 2020/10/26 14:20:05 by abeznik       #+#    #+#                 */
+/*   Updated: 2021/09/29 20:02:18 by abeznik       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "utils.h"
 
-void	ft_bzero(void *s, size_t n)
+int		ft_tolower(int c)
 {
-	ft_memset(s, 0, n);
+	if (c >= 'A' && c <= 'Z')
+		return (c + 32);
+	return (c);
 }

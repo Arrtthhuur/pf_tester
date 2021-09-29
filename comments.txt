@@ -6,7 +6,7 @@
 #    By: abeznik <abeznik@student.codam.nl>           +#+                      #
 #                                                    +#+                       #
 #    Created: 2021/09/27 12:26:22 by abeznik       #+#    #+#                  #
-#    Updated: 2021/09/27 17:41:26 by abeznik       ########   odam.nl          #
+#    Updated: 2021/09/29 20:16:27 by abeznik       ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,15 +34,15 @@ prototype
 conversions
 	cspdiuxX%
 
-1	%c  single char
-2	%s  string of char
-3	%p  void * pointer arg printed in hex
-4	%d  decimal (base 10) number
-5	%i  integer base 10
-6	%u  unsigned decimal (base 10) number
-7	%x  hex (base 16) lowercase
-8	%X  hex (base 16) uppercase
-9	%%  percent sign
+1	%c  single char								OK
+2	%s  string of char							OK
+3	%p  void * pointer arg printed in hex		KO
+4	%d  decimal (base 10) number				OK
+5	%i  integer base 10							OK
+6	%u  unsigned decimal (base 10) number		
+7	%x  number in hex (base 16) lowercase		OK
+8	%X  number in hex (base 16) uppercase		OK
+9	%%  percent sign							OK
 
 Process
 -------
