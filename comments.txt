@@ -44,8 +44,12 @@ conversions
 8	%X  number in hex (base 16) uppercase		OK
 9	%%  percent sign							OK
 
-Process
--------
 
-1) call of ft_printf("%d", 1);
-2) loop on "" to locate % + flag
+Arguments to variadic functions (the ones corresponding to 
+the ... in the declaration) undergo the default argument promotions.
+
+Integer arguments narrower than int are promoted to int (or to 
+unsigned int if the type is unsigned and its maximum value 
+exceeds INT_MAX), and arguments of type float are promoted to double.
+
+So you can't get a char from va_arg().

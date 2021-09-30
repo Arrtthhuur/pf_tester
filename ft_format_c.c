@@ -16,6 +16,6 @@ char	ft_format_c(va_list args)
 {
 	char	c;
 
-	c = (char) va_arg(args, char *);
+	c = va_arg(args, int);
 	return (c);
 }

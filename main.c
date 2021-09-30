@@ -27,9 +27,9 @@ int	main(void)
 	c = 'x';
 	s = "croissant";
 	p = &s;
-	d = -42;
+	d = -1;
 	x = -12;
-	i = -150;
+	i = -2;
 
 	/* c WORKING */
 	// ft_printf("coucou %c\n", c);
@@ -64,15 +64,15 @@ int	main(void)
 	// printf("\texpected: \n");
 	// printf("%d in uppercase hex is %X\n", x, x);
 	
-	/* i NOT WORKING => negative to positive */ 
+	/* i NOT WORKING */ 
 	// ft_printf("i: %i\n", i);
 	// printf("\texpected: \n");
 	// printf("i: %i\n", i);
 
-	/* u  NOT WORKING => negative to positive */
-	// ft_printf("int %d to unsigned int: %u\n", i, i);
-	// printf("\texpected: \n");
-	// printf("int %d to unsigned int: %u\n", i, i);
+	/* u  NOT WORKING => negative to positive => make another putnbr */
+	ft_printf("int %d: %u\n", i, i);
+	printf("\texpected: \n");
+	printf("int %d: %u\n", i, i);
 	
 	/* % WORKING */
 	// ft_printf("%%\n");
