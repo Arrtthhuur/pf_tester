@@ -14,7 +14,7 @@
 
 #include <stdio.h>
 
-int	main(int argc, char *argv[])
+int	main(void)
 {
 	int		count;
 	int		d;
@@ -23,66 +23,73 @@ int	main(int argc, char *argv[])
 	int		x;
 	int     i;
 	void	*p;
-	char	*test = "hallo";
 
-	/* %c WORKING */
 	c = 'x';
-	// ft_printf("coucou %c", c);
-	// printf("\nexpected: ");
-	// printf("coucou %c", c);
-	// ft_printf("coucou %c salut", c);
-	// printf("\nexpected: ");
-	// printf("coucou %c salut", c);
+	s = "croissant";
+	p = &s;
+	d = -42;
+	x = -12;
+	i = -150;
 
-	/* %s WORKING */
-	s = "bonjour";
+	/* c WORKING */
+	// ft_printf("coucou %c\n", c);
+	// printf("\texpected:\n");
+	// printf("coucou %c\n", c);
+	// printf("\n");
+	// ft_printf("coucou %c salut\n", c);
+	// printf("\texpected:\n");
+	// printf("coucou %c salut\n", c);
+
+	/* s WORKING */
 	// ft_printf("coucou %s salut\n", s);
-	// printf("expected: ");
+	// printf("\texpected:\n");
 	// printf("coucou %s salut\n", s);
+	// printf("\n");
 	// ft_printf("coucou %s salut %s\n", s, s);
 	// printf("\texpected:\n");
 	// printf("coucou %s salut %s\n", s, s);
 
-	/* %d  WORKING */
-	d = 1;
-	// ft_printf("nb: %d oui oui", d);
-	// printf("\nexpected: ");
-	// printf("nb: %d oui oui", d);
+	/* d WORKING */
+	// ft_printf("bonjour %d baguette svp\n", d);
+	// printf("\texpected:\n");
+	// printf("bonjour %d baguette svp\n", d);
 
-	/* %x WORKING */
-	x = 12;
-	// ft_printf("x: %x\n", x);
+	/* x NOT WORKING => negative to positive */
+	// ft_printf("%d in lowercase hex is %x\n", x, x);
 	// printf("\texpected: \n");
-	// printf("x: %x\n", x);
-	// printf("\n");
+	// printf("%d in lowercase hex is %x\n", x, x);
 	
-	/* %X WORKING */
-	// ft_printf("x: %X\n", x);
+	/* X NOT WORKING => negative to positive */
+	// ft_printf("%d in uppercase hex is %X\n", x, x);
 	// printf("\texpected: \n");
-	// printf("x: %X\n", x);
+	// printf("%d in uppercase hex is %X\n", x, x);
 	
-	/* %i WORKING */
-	// i = 100;
+	/* i NOT WORKING => negative to positive */ 
 	// ft_printf("i: %i\n", i);
 	// printf("\texpected: \n");
 	// printf("i: %i\n", i);
+
+	/* u  NOT WORKING => negative to positive */
+	// ft_printf("int %d to unsigned int: %u\n", i, i);
+	// printf("\texpected: \n");
+	// printf("int %d to unsigned int: %u\n", i, i);
 	
-	/* %% WORKING */
-	ft_printf("%%\n");
-	printf("\texpected: \n");
-	printf("%%\n");
+	/* % WORKING */
+	// ft_printf("%%\n");
+	// printf("\texpected: \n");
+	// printf("%%\n");
 	
-	/* %p NOT WORKING */
+	/* p NOT WORKING */
 	// printf("%p\n", &test);
 	// ft_printf("%p\n", &test);
-	// ft_printf("p: %p oui oui", p);
-	// printf("\texpected: \n");
-	// printf("p: %p oui oui", p);
+	// ft_printf("bonjour %p merci\n", p);
+	// printf("\texpected:\n");
+	// printf("bonjour %p merci\n", p);
 
 	/* intensive test */
-	// ft_printf("bonjour %c salut %s aurevoir %d heyo %x wayo %X\n", c, s, d, x, x);
+	// ft_printf("%% bonjour %c baguette du %s oui %i oui %d merci %x svp %X aurevoir %u\n", c, s, i, d, x, x, i);
 	// printf("\texpected: \n");
-	// printf("bonjour %c salut %s aurevoir %d heyo %x wayo %X\n", c, s, d, x, x);
+	// printf("%% bonjour %c baguette du %s oui %i oui %d merci %x svp %X aurevoir %u\n", c, s, i, d, x, x, i);
 
 	return (0);
 }

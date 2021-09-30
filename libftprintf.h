@@ -25,12 +25,12 @@ char			*ft_format_s(va_list args);
 
 int				ft_format_d(va_list args);
 
-long			ft_format_p(va_list args);
+char			*ft_format_p(va_list args);
 
 int				ft_format_xX(va_list args);
 
 int				ft_format_i(va_list args);
 
-unsigned int	ft_format_u(va_list args)
+unsigned int	ft_format_u(va_list args);
 
 #endif

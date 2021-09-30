@@ -12,13 +12,10 @@
 
 #include "libftprintf.h"
 
-#include <stdio.h> // printf
-#include <stdarg.h> // va_list
-
-long	ft_format_p(va_list args)
+char	*ft_format_p(va_list args)
 {
-	long	p;
+	char	*p;
 
-	p = (long) va_arg(args, void *);
+	p = va_arg(args, char *);
 	return (p);
 }

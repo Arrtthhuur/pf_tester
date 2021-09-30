@@ -12,7 +12,6 @@
 
 #include "libftprintf.h"
 
-#include <stdio.h>
 #include <stdarg.h>
 
 int	ft_parsing(char *str)

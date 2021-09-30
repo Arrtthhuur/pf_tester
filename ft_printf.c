@@ -12,9 +12,8 @@
 
 #include "libftprintf.h"
 
-// #include <stdarg.h>
-#include <stdio.h> // printf
-#include <unistd.h> // write
+// #include <stdio.h> // printf
+// #include <unistd.h> // write
 
 // static int	ft_parsing(const char *str)
 // {
@@ -129,7 +128,7 @@ int	ft_printf(const char *fmt, ...)
 	char			*s;
 	int				x;
 	int				i;
-	long			p;
+	char			*p;
 	unsigned int	ui;
 
 	va_start(args, fmt);
@@ -153,8 +152,8 @@ int	ft_printf(const char *fmt, ...)
 			else if (fmt[len + 1] == 'd')
 			{
 				d = ft_format_d(args);
-				d = d + '0';
-				ft_putchar(d);
+				ft_putnbr(d);
+
 				len++;
 			}
 			else if (fmt[len + 1] == 'x' || fmt[len + 1] == 'X')
@@ -176,7 +175,7 @@ int	ft_printf(const char *fmt, ...)
 			{
 				p = ft_format_p(args);
 				ft_putstr("Ox");
-				ft_putnbr(p);
+				ft_putstr(p);
 				len++;
 			}
 			else if (fmt[len + 1] == 'u')

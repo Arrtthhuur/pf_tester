@@ -12,13 +12,10 @@
 
 #include "libftprintf.h"
 
-#include <stdio.h> // printf
-#include <stdarg.h> // va_list
-
 unsigned int	ft_format_u(va_list args)
 {
 	unsigned int	ui;
 
-	ui = va_arg(args, int);
+	ui = va_arg(args, unsigned int);
 	return (ui);
 }

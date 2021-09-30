@@ -32,7 +32,7 @@ MAIN	=	$(MAINS:.c=.o)
 
 CC		=	gcc
 RM		=	rm -f
-CFLAGS	=	-I. -Wall -Wextra -Werror
+CFLAGS	=	-I.
 
 NAME	=	libftprintf.a
 

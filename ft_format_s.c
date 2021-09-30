@@ -12,9 +12,6 @@
 
 #include "libftprintf.h"
 
-#include <stdio.h>
-#include <stdarg.h>
-
 char	*ft_format_s(va_list args)
 {
 	char	*s;
