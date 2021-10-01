@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_hex_long.c                                      :+:    :+:            */
+/*   ft_hexlong_conv.c                                  :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: abeznik <abeznik@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/09/29 18:39:38 by abeznik       #+#    #+#                 */
-/*   Updated: 2021/10/01 15:57:04 by abeznik       ########   odam.nl         */
+/*   Updated: 2021/10/01 17:55:19 by abeznik       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,8 @@ int	ft_hexlong_conv(unsigned long long decimalnum)
 	unsigned long long		quotient;
 	unsigned long long		remainder;
 	int						j;
-	int						i;
 	char					hexadecimalnum[100];
 
-	i = 0;
 	j = 0;
 	quotient = decimalnum;
 	while (quotient != 0)

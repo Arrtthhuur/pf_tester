@@ -1,21 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_format_i.c                                      :+:    :+:            */
+/*   ft_uxXprintf.c                                     :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: abeznik <abeznik@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/09/29 20:04:38 by abeznik       #+#    #+#                 */
-/*   Updated: 2021/09/29 20:10:25 by abeznik       ########   odam.nl         */
+/*   Created: 2021/10/01 18:08:59 by abeznik       #+#    #+#                 */
+/*   Updated: 2021/10/01 18:21:38 by abeznik       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-int	ft_format_i(va_list args)
+void	ft_uxXprintf(va_list args, const char *fmt, int len)
 {
-	int	i;
+	unsigned int	ui;
+	char			*ret;
 
-	i = va_arg(args, int);
-	return (i);
+	ui = ft_format_uxX(args);
+	if (fmt[len] == 'x')
+		ft_hex_conv(ui, 1);
+	else if (fmt[len] == 'X')
+		ft_hex_conv(ui, 2);
+	else if (fmt[len] == 'u')
+	{
+		ret = ft_utoa(ui);
+		ft_putstr(ret);
+	}
 }

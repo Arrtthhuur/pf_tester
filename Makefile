@@ -6,7 +6,7 @@
 #    By: abeznik <abeznik@student.codam.nl>           +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/11/20 18:39:56 by abeznik       #+#    #+#                  #
-#    Updated: 2021/10/01 15:57:30 by abeznik       ########   odam.nl          #
+#    Updated: 2021/10/01 18:27:54 by abeznik       ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,6 +16,8 @@ SRCS	=	ft_printf.c \
 			ft_format_p.c \
 			ft_format_di.c \
 			ft_format_uxX.c \
+			ft_uxXprintf.c \
+			ft_pprintf.c \
 			utils/ft_putchar.c \
 			utils/ft_putstr.c \
 			utils/ft_putnbr.c \

@@ -6,7 +6,7 @@
 /*   By: abeznik <abeznik@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/20 18:43:17 by abeznik       #+#    #+#                 */
-/*   Updated: 2021/10/01 15:46:38 by abeznik       ########   odam.nl         */
+/*   Updated: 2021/10/01 18:27:42 by abeznik       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,9 @@ unsigned long long	ft_format_p(va_list args);
 int					ft_format_di(va_list args);
 
 unsigned int		ft_format_uxX(va_list args);
+
+void				ft_uxXprintf(va_list args, const char *fmt, int len);
+
+void				ft_pprintf(va_list args);
 
 #endif
