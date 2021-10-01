@@ -1,20 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_tolower.c                                       :+:    :+:            */
+/*   ft_format_u.c                                      :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: abeznik <abeznik@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/10/26 14:20:05 by abeznik       #+#    #+#                 */
-/*   Updated: 2021/10/01 14:46:32 by abeznik       ########   odam.nl         */
+/*   Created: 2021/09/29 18:29:15 by abeznik       #+#    #+#                 */
+/*   Updated: 2021/10/01 14:10:25 by abeznik       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "utils.h"
+#include "libftprintf.h"
 
-int	ft_tolower(int c)
+unsigned int	ft_format_uxX(va_list args)
 {
-	if (c >= 'A' && c <= 'Z')
-		return (c + 32);
-	return (c);
+	unsigned int	ui;
+
+	ui = va_arg(args, unsigned int);
+	return (ui);
 }

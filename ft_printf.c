@@ -6,7 +6,7 @@
 /*   By: abeznik <abeznik@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/20 18:40:57 by abeznik       #+#    #+#                 */
-/*   Updated: 2021/09/29 20:18:25 by abeznik       ########   odam.nl         */
+/*   Updated: 2021/10/01 15:57:45 by abeznik       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,16 @@
 
 int	ft_printf(const char *fmt, ...)
 {
-	va_list			args;
-	int				d;
-	int				len;
-	char			c;
-	char			*s;
-	int				x;
-	int				i;
-	char			*p;
-	unsigned int	ui;
+	va_list				args;
+	int					d;
+	int					len;
+	int					i;
+	char				c;
+	char				*s;
+	unsigned long long	p;
+	unsigned int		x;
+	unsigned int		ui;
+	char				*ret;
 
 	va_start(args, fmt);
 	len = 0;
@@ -44,22 +45,13 @@ int	ft_printf(const char *fmt, ...)
 			}
 			else if (fmt[len + 1] == 'd')
 			{
-				d = ft_format_d(args);
+				d = ft_format_di(args);
 				ft_putnbr(d);
-				len++;
-			}
-			else if (fmt[len + 1] == 'x' || fmt[len + 1] == 'X')
-			{
-				x = ft_format_xX(args);
-				if (fmt[len + 1] == 'x')
-					ft_hex_conv(x, 1);
-				else if (fmt[len + 1] == 'X')
-					ft_hex_conv(x, 2);
 				len++;
 			}
 			else if (fmt[len + 1] == 'i')
 			{
-				i = ft_format_i(args);
+				i = ft_format_di(args);
 				ft_putnbr(i);
 				len++;
 			}
@@ -67,16 +59,23 @@ int	ft_printf(const char *fmt, ...)
 			{
 				p = ft_format_p(args);
 				ft_putstr("Ox");
-				ft_putstr(p);
+				ft_hexlong_conv(p);
 				len++;
 			}
 			else if (fmt[len + 1] == 'u')
 			{
-				ui = ft_format_u(args);
-				
-				// if (ui < 0)
-				// 	ui += 4294967295;
-				// ft_putnbr(ui);
+				ui = ft_format_uxX(args);
+				ret = ft_utoa(ui);
+				ft_putstr(ret);
+				len++;
+			}
+			else if (fmt[len + 1] == 'x' || fmt[len + 1] == 'X')
+			{
+				x = ft_format_uxX(args);
+				if (fmt[len + 1] == 'x')
+					ft_hex_conv(x, 1);
+				else if (fmt[len + 1] == 'X')
+					ft_hex_conv(x, 2);
 				len++;
 			}
 			else if (fmt[len + 1] == '%')

@@ -6,23 +6,24 @@
 #    By: abeznik <abeznik@student.codam.nl>           +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/11/20 18:39:56 by abeznik       #+#    #+#                  #
-#    Updated: 2021/09/29 20:19:40 by abeznik       ########   odam.nl          #
+#    Updated: 2021/10/01 15:57:30 by abeznik       ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS	=	ft_printf.c $\
-			ft_format_s.c $\
-			ft_format_c.c $\
-			ft_format_d.c $\
-			ft_format_p.c $\
-			ft_format_x.c $\
-			ft_format_i.c $\
-			ft_format_u.c $\
-			utils/ft_putchar.c $\
-			utils/ft_putstr.c $\
-			utils/ft_putnbr.c $\
-			utils/ft_hex_conv.c $\
-			utils/ft_tolower.c $\
+SRCS	=	ft_printf.c \
+			ft_format_c.c \
+			ft_format_s.c \
+			ft_format_p.c \
+			ft_format_di.c \
+			ft_format_uxX.c \
+			utils/ft_putchar.c \
+			utils/ft_putstr.c \
+			utils/ft_putnbr.c \
+			utils/ft_hex_conv.c \
+			utils/ft_hexlong_conv.c \
+			utils/ft_tolower.c \
+			utils/ft_itoa.c \
+			utils/ft_utoa.c \
 
 MAINS	=	main.c
 
@@ -32,11 +33,12 @@ MAIN	=	$(MAINS:.c=.o)
 
 CC		=	gcc
 RM		=	rm -f
-CFLAGS	=	-I.
+CFLAGS	=	-I. -Werror -Wextra -Wall
 
 NAME	=	libftprintf.a
 
 all:		$(NAME)
+	@echo "$(SRCS)"
 
 $(NAME): 	$(OBJS)
 	ar cr $(NAME) $(OBJS)

@@ -1,40 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_hex_conv.c                                      :+:    :+:            */
+/*   ft_hex_long.c                                      :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: abeznik <abeznik@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/09/29 18:39:38 by abeznik       #+#    #+#                 */
-/*   Updated: 2021/10/01 15:53:15 by abeznik       ########   odam.nl         */
+/*   Updated: 2021/10/01 15:57:04 by abeznik       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "utils.h"
 
-static int	ft_print_hex(char *hexadecimalnum, int j, int format)
+static int	ft_print_hex(char *hexadecimalnum, int j)
 {
 	int	i;
 
 	i = j - 1;
 	while (i >= 0)
 	{
-		if (format == 1)
-			ft_putchar(ft_tolower(hexadecimalnum[i]));
-		else if (format == 2)
-			ft_putchar(hexadecimalnum[i]);
+		ft_putchar(ft_tolower(hexadecimalnum[i]));
 		i--;
 	}
 	return (0);
 }
 
-int	ft_hex_conv(unsigned int decimalnum, int format)
+int	ft_hexlong_conv(unsigned long long decimalnum)
 {
-	unsigned int		quotient;
-	unsigned int		remainder;
-	int					j;
-	int					i;
-	char				hexadecimalnum[100];
+	unsigned long long		quotient;
+	unsigned long long		remainder;
+	int						j;
+	int						i;
+	char					hexadecimalnum[100];
 
 	i = 0;
 	j = 0;
@@ -50,6 +47,6 @@ int	ft_hex_conv(unsigned int decimalnum, int format)
 		j++;
 		quotient = quotient / 16;
 	}
-	ft_print_hex(hexadecimalnum, j, format);
+	ft_print_hex(hexadecimalnum, j);
 	return (0);
 }

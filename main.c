@@ -6,7 +6,7 @@
 /*   By: abeznik <abeznik@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/09/27 12:32:53 by abeznik       #+#    #+#                 */
-/*   Updated: 2021/09/29 20:16:14 by abeznik       ########   odam.nl         */
+/*   Updated: 2021/10/01 16:08:21 by abeznik       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,37 +54,35 @@ int	main(void)
 	// printf("\texpected:\n");
 	// printf("bonjour %d baguette svp\n", d);
 
-	/* x NOT WORKING => negative to positive */
+	/* x WORKING */
 	// ft_printf("%d in lowercase hex is %x\n", x, x);
 	// printf("\texpected: \n");
 	// printf("%d in lowercase hex is %x\n", x, x);
 	
-	/* X NOT WORKING => negative to positive */
+	/* X WORKING */
 	// ft_printf("%d in uppercase hex is %X\n", x, x);
 	// printf("\texpected: \n");
 	// printf("%d in uppercase hex is %X\n", x, x);
 	
-	/* i NOT WORKING */ 
+	/* i WORKING */ 
 	// ft_printf("i: %i\n", i);
 	// printf("\texpected: \n");
 	// printf("i: %i\n", i);
 
-	/* u  NOT WORKING => negative to positive => make another putnbr */
-	ft_printf("int %d: %u\n", i, i);
-	printf("\texpected: \n");
-	printf("int %d: %u\n", i, i);
+	/* u WORKING */
+	// ft_printf("int %d: %u\n", i, i);
+	// printf("\texpected: \n");
+	// printf("int %d: %u\n", i, i);
 	
 	/* % WORKING */
 	// ft_printf("%%\n");
 	// printf("\texpected: \n");
 	// printf("%%\n");
 	
-	/* p NOT WORKING */
-	// printf("%p\n", &test);
-	// ft_printf("%p\n", &test);
-	// ft_printf("bonjour %p merci\n", p);
-	// printf("\texpected:\n");
-	// printf("bonjour %p merci\n", p);
+	/* p WORKING */
+	ft_printf("bonjour %p merci\n", p);
+	printf("\texpected:\n");
+	printf("bonjour %p merci\n", p);
 
 	/* intensive test */
 	// ft_printf("%% bonjour %c baguette du %s oui %i oui %d merci %x svp %X aurevoir %u\n", c, s, i, d, x, x, i);
