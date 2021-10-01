@@ -6,7 +6,7 @@
 /*   By: abeznik <abeznik@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/09/27 12:32:53 by abeznik       #+#    #+#                 */
-/*   Updated: 2021/10/01 16:08:21 by abeznik       ########   odam.nl         */
+/*   Updated: 2021/10/01 16:23:49 by abeznik       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int	main(void)
 	p = &s;
 	d = -1;
 	x = -12;
-	i = -2;
+	i = 42424242424242;
 
 	/* c WORKING */
 	// ft_printf("coucou %c\n", c);
@@ -65,9 +65,9 @@ int	main(void)
 	// printf("%d in uppercase hex is %X\n", x, x);
 	
 	/* i WORKING */ 
-	// ft_printf("i: %i\n", i);
-	// printf("\texpected: \n");
-	// printf("i: %i\n", i);
+	ft_printf("i: %i\n", i);
+	printf("\texpected: \n");
+	printf("i: %i\n", i);
 
 	/* u WORKING */
 	// ft_printf("int %d: %u\n", i, i);
@@ -80,9 +80,9 @@ int	main(void)
 	// printf("%%\n");
 	
 	/* p WORKING */
-	ft_printf("bonjour %p merci\n", p);
-	printf("\texpected:\n");
-	printf("bonjour %p merci\n", p);
+	// ft_printf("bonjour %p merci\n", p);
+	// printf("\texpected:\n");
+	// printf("bonjour %p merci\n", p);
 
 	/* intensive test */
 	// ft_printf("%% bonjour %c baguette du %s oui %i oui %d merci %x svp %X aurevoir %u\n", c, s, i, d, x, x, i);
