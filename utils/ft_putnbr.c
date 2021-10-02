@@ -6,11 +6,9 @@
 /*   By: abeznik <abeznik@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/23 10:29:13 by abeznik       #+#    #+#                 */
-/*   Updated: 2021/10/01 13:43:45 by abeznik       ########   odam.nl         */
+/*   Updated: 2021/10/02 17:36:05 by anonymous     ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <unistd.h>
 
 #include "utils.h"
 
@@ -47,6 +45,3 @@ void	ft_putnbr(int nb)
 		recursive(nb);
 	}
 }
-
-// 2147483648
-// 4294967295

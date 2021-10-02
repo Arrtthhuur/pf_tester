@@ -6,18 +6,13 @@
 #    By: abeznik <abeznik@student.codam.nl>           +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/11/20 18:39:56 by abeznik       #+#    #+#                  #
-#    Updated: 2021/10/01 18:27:54 by abeznik       ########   odam.nl          #
+#    Updated: 2021/10/02 17:35:02 by anonymous     ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
 SRCS	=	ft_printf.c \
-			ft_format_c.c \
-			ft_format_s.c \
-			ft_format_p.c \
-			ft_format_di.c \
-			ft_format_uxX.c \
-			ft_uxXprintf.c \
-			ft_pprintf.c \
+			ft_conversions.c \
+			ft_printconv.c \
 			utils/ft_putchar.c \
 			utils/ft_putstr.c \
 			utils/ft_putnbr.c \
@@ -40,11 +35,15 @@ CFLAGS	=	-I. -Werror -Wextra -Wall
 NAME	=	libftprintf.a
 
 all:		$(NAME)
-	@echo "$(SRCS)"
 
 $(NAME): 	$(OBJS)
 	ar cr $(NAME) $(OBJS)
 	@echo "[INFO] Created libftprintf.a!"
+
+norm:
+	norminette ./utils/
+	@echo
+	norminette ./$(SRCS)
 
 clean:
 	$(RM) $(OBJS) $(MAIN)

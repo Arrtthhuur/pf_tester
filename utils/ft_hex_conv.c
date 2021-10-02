@@ -6,7 +6,7 @@
 /*   By: abeznik <abeznik@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/09/29 18:39:38 by abeznik       #+#    #+#                 */
-/*   Updated: 2021/10/01 15:53:15 by abeznik       ########   odam.nl         */
+/*   Updated: 2021/10/02 13:31:09 by abeznik       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,8 @@ int	ft_hex_conv(unsigned int decimalnum, int format)
 	unsigned int		quotient;
 	unsigned int		remainder;
 	int					j;
-	int					i;
 	char				hexadecimalnum[100];
 
-	i = 0;
 	j = 0;
 	quotient = decimalnum;
 	while (quotient != 0)
