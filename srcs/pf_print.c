@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_printconv.c                                     :+:    :+:            */
+/*   pf_print.c                                         :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: abeznik <abeznik@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/02 13:25:07 by abeznik       #+#    #+#                 */
-/*   Updated: 2021/10/03 15:33:59 by abeznik       ########   odam.nl         */
+/*   Updated: 2021/10/03 19:57:59 by abeznik       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,10 @@ void	ft_sprintf(va_list args)
 	char	*s;
 
 	s = ft_format_s(args);
-	ft_putstr(s);
+	if (s == NULL)
+		ft_putstr("(null)");
+	else
+		ft_putstr(s);
 }
 
 void	ft_diprintf(va_list args)

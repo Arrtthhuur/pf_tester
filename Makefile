@@ -6,7 +6,7 @@
 #    By: abeznik <abeznik@student.codam.nl>           +#+                      #
 #                                                    +#+                       #
 #    Created: 2021/10/03 15:23:47 by abeznik       #+#    #+#                  #
-#    Updated: 2021/10/03 17:52:41 by abeznik       ########   odam.nl          #
+#    Updated: 2021/10/03 19:22:39 by abeznik       ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,7 +30,7 @@ OBJS = $(addprefix $(OBJ_DIR)/,$(SOURCES:.c=.o))
 
 CC		=	gcc
 RM		=	rm -f
-FLAGS	=	-I. -Wall -Wextra -Werror
+FLAGS	=	-I.
 
 all:		$(NAME)
 
@@ -54,9 +54,12 @@ norme:
 	@echo
 
 printf:
-	@make all
 	$(CC) $(FLAGS) $(SRCS) misc/main.c $(NAME)
 	@echo
+
+debug:
+	$(CC) -g3 $(SRCS) misc/main.c $(NAME)
+	lldb a.out
 
 out:	./a.out
 	./a.out

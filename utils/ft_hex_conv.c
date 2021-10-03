@@ -6,7 +6,7 @@
 /*   By: abeznik <abeznik@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/09/29 18:39:38 by abeznik       #+#    #+#                 */
-/*   Updated: 2021/10/03 16:21:12 by abeznik       ########   odam.nl         */
+/*   Updated: 2021/10/03 19:14:56 by abeznik       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,9 @@ int	ft_hex_conv(unsigned int decimalnum, int format)
 		j++;
 		quotient = quotient / 16;
 	}
-	ft_print_hex(hexadecimalnum, j, format);
+	if (decimalnum == 0)
+		ft_putchar('0');
+	else
+		ft_print_hex(hexadecimalnum, j, format);
 	return (0);
 }
