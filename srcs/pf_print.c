@@ -6,13 +6,16 @@
 /*   By: abeznik <abeznik@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/02 13:25:07 by abeznik       #+#    #+#                 */
-/*   Updated: 2021/10/02 17:37:48 by anonymous     ########   odam.nl         */
+/*   Updated: 2021/10/03 15:33:59 by abeznik       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "../includes/libftprintf.h"
 
-/* File with all the print functions according to the conversion format (see ft_conversions.c) */
+/*
+File with all the print functions according 
+to the conversion format (see ft_conversions.c) 
+*/
 
 void	ft_cprintf(va_list args)
 {

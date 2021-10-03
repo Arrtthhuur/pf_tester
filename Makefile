@@ -5,69 +5,80 @@
 #                                                      +:+                     #
 #    By: abeznik <abeznik@student.codam.nl>           +#+                      #
 #                                                    +#+                       #
-#    Created: 2020/11/20 18:39:56 by abeznik       #+#    #+#                  #
-#    Updated: 2021/10/02 17:35:02 by anonymous     ########   odam.nl          #
+#    Created: 2021/10/03 15:23:47 by abeznik       #+#    #+#                  #
+#    Updated: 2021/10/03 17:52:41 by abeznik       ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS	=	ft_printf.c \
-			ft_conversions.c \
-			ft_printconv.c \
-			utils/ft_putchar.c \
-			utils/ft_putstr.c \
-			utils/ft_putnbr.c \
-			utils/ft_hex_conv.c \
-			utils/ft_hexlong_conv.c \
-			utils/ft_tolower.c \
-			utils/ft_itoa.c \
-			utils/ft_utoa.c \
-
-MAINS	=	main.c
-
-OBJS	=	$(SRCS:.c=.o)
-
-MAIN	=	$(MAINS:.c=.o)
-
-CC		=	gcc
-RM		=	rm -f
-CFLAGS	=	-I. -Werror -Wextra -Wall
+UTILS	=	./utils/utils.a
 
 NAME	=	libftprintf.a
 
+SOURCES	=	ft_printf.c \
+			pf_conversions.c \
+			pf_print.c \
+
+SRC_DIR	=	srcs
+
+OBJ_DIR	=	obj
+
+HEADER	=	includes
+
+SRCS = $(addprefix $(SRC_DIR)/,$(SOURCES))
+
+OBJS = $(addprefix $(OBJ_DIR)/,$(SOURCES:.c=.o))
+
+CC		=	gcc
+RM		=	rm -f
+FLAGS	=	-I. -Wall -Wextra -Werror
+
 all:		$(NAME)
 
-$(NAME): 	$(OBJS)
-	ar cr $(NAME) $(OBJS)
-	@echo "[INFO] Created libftprintf.a!"
-
-norm:
-	norminette ./utils/
+$(NAME):	$(OBJS)
+	make -C ./utils
+	cp $(UTILS) $(NAME)
 	@echo
-	norminette ./$(SRCS)
+	ar cr $(NAME) $(OBJS)
+	@echo
 
-clean:
-	$(RM) $(OBJS) $(MAIN)
-	@echo "[INFO] Cleaned object files!"
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c $(HEADER)/libftprintf.h
+	@mkdir -p obj
+	$(CC) -c $(FLAGS) -I $(HEADER) -o $@ $<
+	@echo
 
-fclean:		clean
-	$(RM) $(NAME)
-	@echo "[INFO] Cleaned object and executable files!"
-
-oclean:
-	$(RM) *.out
-	@echo "[INFO] Cleaned .out!"
+norme:
+	@make norme -C ./utils
+	norminette ./$(SRC_DIR)
+	@echo
+	norminette ./$(HEADER)
+	@echo
 
 printf:
-	$(CC) $(CLFAGS) $(SRCS) $(MAINS)
+	@make all
+	$(CC) $(FLAGS) $(SRCS) misc/main.c $(NAME)
+	@echo
 
-debug:
-	$(CC) -g3 $(SRCS) $(MAINS)
-	lldb a.out
+out:	./a.out
+	./a.out
 
-del:	mclean fclean oclean
-	@echo "[INFO] Deleted!"
+clean:
+	@make clean -C ./utils
+	@echo
+	$(RM) $(OBJS)
+	@echo
+	$(RM) -r $(OBJ_DIR)
+	@echo
 
-re:			fclean all
-	@echo "[INFO] Cleaned and recompiling!"
+fclean: clean
+	make fclean -C ./utils
+	@echo
+	$(RM) $(NAME)
+	@echo
 
-.PHONY:		all clean fclean mclean re
+del:	fclean
+	$(RM) *.out
+	@echo
+
+re: fclean all
+
+.PHONY: fclean re norme all clean

@@ -6,12 +6,14 @@
 /*   By: abeznik <abeznik@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/09/28 15:53:54 by abeznik       #+#    #+#                 */
-/*   Updated: 2021/10/02 17:36:40 by anonymous     ########   odam.nl         */
+/*   Updated: 2021/10/03 16:17:21 by abeznik       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef UTILS_H
 # define UTILS_H
+
+# include "../includes/libftprintf.h"
 
 # include <stdlib.h>
 

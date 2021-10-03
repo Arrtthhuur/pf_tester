@@ -1,18 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_conversions.c                                   :+:    :+:            */
+/*   pf_conversions.c                                   :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: abeznik <abeznik@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/02 13:06:02 by abeznik       #+#    #+#                 */
-/*   Updated: 2021/10/02 13:23:31 by abeznik       ########   odam.nl         */
+/*   Updated: 2021/10/03 15:52:46 by abeznik       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "../includes/libftprintf.h"
 
-/* File with all the conversion formats */
+/*
+File with all the conversion formats
+*/
 
 char	ft_format_c(va_list args)
 {

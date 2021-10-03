@@ -6,15 +6,14 @@
 /*   By: abeznik <abeznik@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/20 18:43:17 by abeznik       #+#    #+#                 */
-/*   Updated: 2021/10/02 13:58:33 by abeznik       ########   odam.nl         */
+/*   Updated: 2021/10/03 16:17:06 by abeznik       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFTPRINTF_H
 # define LIBFTPRINTF_H
 
-# include "utils/utils.h"
-# include "utils/ANSI-color-codes.h"
+# include "../utils/utils.h"
 
 # include <stdarg.h>
 

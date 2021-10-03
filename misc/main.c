@@ -6,28 +6,29 @@
 /*   By: abeznik <abeznik@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/09/27 12:32:53 by abeznik       #+#    #+#                 */
-/*   Updated: 2021/10/02 17:32:51 by anonymous     ########   odam.nl         */
+/*   Updated: 2021/10/03 17:50:12 by abeznik       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#define TEST_C
-#define TEST_S
-#define TEST_D
-#define TEST_I
-#define TEST_P
-#define TEST_x
-#define TEST_X
-#define TEST_U
-#define TEST_PRO
-
-#include "libftprintf.h"
+#include "../includes/libftprintf.h"
+#include "ANSI-color-codes.h"
 
 #include <stdio.h>
 #include <limits.h>
 
+#define TEST_C
+// #define TEST_S
+// #define TEST_D
+// #define TEST_I
+// #define TEST_P
+// #define TEST_LX
+// #define TEST_X
+// #define TEST_U
+// #define TEST_PRO
+#define TEST_ALL
+
 int	main(void)
 {
-	int		count;
 	int		d;
 	char	c;
 	char	*s;
@@ -105,7 +106,7 @@ int	main(void)
 	printf("\n");
 	printf("\n");
 	printf(BHBLU "------------------------------------------------------------\n");
-	printf("|                        DONE TESTING c                    |\n");
+	printf("|                        DONE TESTING s                    |\n");
 	printf("------------------------------------------------------------\n" reset);
 	printf("\n");
 
@@ -225,7 +226,7 @@ int	main(void)
 
 #endif
 
-#ifdef TEST_x
+#ifdef TEST_LX
 
 	printf("\n");
 	printf(BHBLU "------------------------------------------------------------\n");
@@ -371,6 +372,8 @@ int	main(void)
 
 #endif
 
+#ifdef TEST_ALL
+
 	printf("\n");
 	printf(BHBLU "------------------------------------------------------------\n");
 	printf("|               TESTING ALL FORMAT CONVERSIONS             |\n");
@@ -381,6 +384,8 @@ int	main(void)
 	ft_printf(BHWHT "| %% bonjour %c baguette du %s oui %i oui %d merci %x svp %X aurevoir %u\n" reset, c, s, i, d, x, x, i);
 	printf(BHBLU "|-------------------------- DONE --------------------------|\n" reset);
 	printf("\n");
+
+#endif
 
 	return (0);
 }
