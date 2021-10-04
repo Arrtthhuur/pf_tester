@@ -6,7 +6,7 @@
 #    By: abeznik <abeznik@student.codam.nl>           +#+                      #
 #                                                    +#+                       #
 #    Created: 2021/10/03 15:23:47 by abeznik       #+#    #+#                  #
-#    Updated: 2021/10/04 18:58:33 by abeznik       ########   odam.nl          #
+#    Updated: 2021/10/04 22:21:31 by anonymous     ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,11 @@ NAME	=	libftprintf.a
 
 SOURCES	=	ft_printf.c \
 			pf_conversions.c \
-			pf_print.c \
+			pf_hex_conv.c \
+			pf_hexlong_conv.c \
+			pf_print_format.c \
+			pf_print_u.c \
+			pf_utoa.c \
 
 SRC_DIR	=	srcs
 
@@ -30,57 +34,42 @@ OBJS = $(addprefix $(OBJ_DIR)/,$(SOURCES:.c=.o))
 
 CC		=	gcc
 RM		=	rm -f
-FLAGS	=	-I.
+FLAGS	=	-I. -Werror -Wextra -Wall
 
 all:		$(NAME)
 
 $(NAME):	$(OBJS)
 	make -C ./utils
 	cp $(UTILS) $(NAME)
-	@echo
 	ar cr $(NAME) $(OBJS)
-	@echo
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c $(HEADER)/libftprintf.h
 	@mkdir -p obj
 	$(CC) -c $(FLAGS) -I $(HEADER) -o $@ $<
-	@echo
 
 norme:
 	@make norme -C ./utils
 	norminette ./$(SRC_DIR)
-	@echo
 	norminette ./$(HEADER)
-	@echo
 
 printf:
-	$(CC) $(FLAGS) $(SRCS) misc/main.c $(NAME)
-	@echo
+	$(CC) $(SRCS) misc/main.c $(NAME) && ./a.out
 
 debug:
 	$(CC) -g3 $(SRCS) misc/main.c $(NAME)
 	lldb a.out
 
-out:	./a.out
-	./a.out
-
 clean:
 	@make clean -C ./utils
-	@echo
 	$(RM) $(OBJS)
-	@echo
 	$(RM) -r $(OBJ_DIR)
-	@echo
 
 fclean: clean
 	make fclean -C ./utils
-	@echo
 	$(RM) $(NAME)
-	@echo
 
 del:	fclean
 	$(RM) *.out
-	@echo
 
 re: fclean all
 

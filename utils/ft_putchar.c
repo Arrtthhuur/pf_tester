@@ -6,11 +6,9 @@
 /*   By: abeznik <abeznik@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/23 10:25:57 by abeznik       #+#    #+#                 */
-/*   Updated: 2021/10/03 16:21:44 by abeznik       ########   odam.nl         */
+/*   Updated: 2021/10/04 22:30:37 by anonymous     ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "utils.h"
 
 #include <unistd.h> // write
 

@@ -1,48 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_hexlong_conv.c                                  :+:    :+:            */
+/*   pf_hex_conv.c                                      :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: abeznik <abeznik@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/09/29 18:39:38 by abeznik       #+#    #+#                 */
-/*   Updated: 2021/10/04 18:37:29 by abeznik       ########   odam.nl         */
+/*   Updated: 2021/10/04 22:32:57 by anonymous     ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "utils.h"
-#include <stdio.h>
+#include "../includes/libftprintf.h"
 
-static int	ft_print_hex(char *hexadecimalnum, int j)
+/*
+File with unsigned int to hex conversion and print
+*/
+
+static int	ft_print_hex(char *hexadecimalnum, int j, int format)
 {
 	int	i;
 
 	i = j - 1;
 	while (i >= 0)
 	{
-		ft_putchar(ft_tolower(hexadecimalnum[i]));
+		if (format == 1)
+			ft_putchar(ft_tolower(hexadecimalnum[i]));
+		else if (format == 2)
+			ft_putchar(hexadecimalnum[i]);
 		i--;
 	}
 	return (0);
 }
 
-static int	ft_toomuchlines(unsigned long long decimalnum,
-	char *hexadecimalnum, int j)
+int	ft_hex_conv(unsigned int decimalnum, int format)
 {
-	int	count;
-
-	count = ft_strlen(hexadecimalnum);
-	ft_print_hex(hexadecimalnum, j);
-	return (count);
-}
-
-int	ft_hexlong_conv(unsigned long long decimalnum)
-{
-	unsigned long long		quotient;
-	unsigned long long		remainder;
-	int						j;
-	char					hexadecimalnum[100];
-	int						count;
+	unsigned int		quotient;
+	unsigned int		remainder;
+	int					j;
+	char				hexadecimalnum[100];
+	int					count;
 
 	j = 0;
 	quotient = decimalnum;
@@ -58,6 +54,7 @@ int	ft_hexlong_conv(unsigned long long decimalnum)
 		quotient = quotient / 16;
 	}
 	hexadecimalnum[j] = '\0';
-	count = ft_toomuchlines(decimalnum, hexadecimalnum, j);
+	count = ft_strlen(hexadecimalnum);
+	ft_print_hex(hexadecimalnum, j, format);
 	return (count);
 }

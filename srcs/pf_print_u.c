@@ -1,18 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   pf_uprint.c                                        :+:    :+:            */
+/*   pf_print_u.c                                       :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: abeznik <abeznik@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/04 18:46:11 by abeznik       #+#    #+#                 */
-/*   Updated: 2021/10/04 18:50:26 by abeznik       ########   odam.nl         */
+/*   Updated: 2021/10/04 22:34:33 by anonymous     ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "utils.h"
+#include "../includes/libftprintf.h"
 
-int	pf_uprint(unsigned int ui)
+/*
+File with function to print u conversion and return count
+*/
+
+int	ft_uprintf(unsigned int ui)
 {
 	int		count;
 	char	*ret;

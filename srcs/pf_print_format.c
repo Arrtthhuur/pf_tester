@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   pf_print.c                                         :+:    :+:            */
+/*   pf_print_format.c                                  :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: abeznik <abeznik@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/02 13:25:07 by abeznik       #+#    #+#                 */
-/*   Updated: 2021/10/04 18:50:49 by abeznik       ########   odam.nl         */
+/*   Updated: 2021/10/04 22:33:32 by anonymous     ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 /*
 File with all the print functions according 
-to the conversion format (see ft_conversions.c) 
+to the conversion format (see pf_conversions.c) 
 */
 
 int	ft_cprintf(va_list args)
@@ -64,9 +64,15 @@ int	ft_pprintf(va_list args)
 	int					count;
 
 	p = ft_format_p(args);
-	ft_putstr("Ox");
+	ft_putstr("0x");
 	count = 2;
-	count += ft_hexlong_conv(p);
+	if (p == 0)
+	{
+		ft_putchar('0');
+		count += 1;
+	}
+	else
+		count += ft_hexlong_conv(p);
 	return (count);
 }
 
@@ -89,7 +95,7 @@ int	ft_uxXprintf(va_list args, const char *fmt, int len)
 		else if (fmt[len] == 'X')
 			count = ft_hex_conv(ui, 2);
 		else if (fmt[len] == 'u')
-			count = pf_uprint(ui);
+			count = ft_uprintf(ui);
 	}
 	return (count);
 }

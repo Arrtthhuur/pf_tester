@@ -6,11 +6,11 @@
 /*   By: abeznik <abeznik@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/23 10:25:44 by abeznik       #+#    #+#                 */
-/*   Updated: 2021/10/03 16:21:49 by abeznik       ########   odam.nl         */
+/*   Updated: 2021/10/04 20:39:50 by anonymous     ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "utils.h"
+#include "../includes/utils.h"
 
 void	ft_putstr(char *str)
 {

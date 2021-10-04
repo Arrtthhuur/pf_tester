@@ -6,7 +6,7 @@
 /*   By: abeznik <abeznik@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/09/27 12:32:53 by abeznik       #+#    #+#                 */
-/*   Updated: 2021/10/04 18:58:23 by abeznik       ########   odam.nl         */
+/*   Updated: 2021/10/04 22:27:49 by anonymous     ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,18 +17,18 @@
 #include <stdio.h>
 #include <limits.h>
 
-#define TEST_C
-#define TEST_S
-#define TEST_D
-#define TEST_I
-#define TEST_U
-#define TEST_LX
-#define TEST_X
+// #define TEST_C
+// #define TEST_S
+// #define TEST_D
+// #define TEST_I
+// #define TEST_U
+// #define TEST_LX
+// #define TEST_X
 #define TEST_P
-#define TEST_PRO
-#define TEST_ALL
+// #define TEST_PRO
+// #define TEST_ALL
 
-#define ULLONG_MAX 18446744073709551615ULL
+// #define ULLONG_MAX 18446744073709551615ULL
 
 int	main(void)
 {
@@ -42,6 +42,7 @@ int	main(void)
 	sleep(1);
 	printf(BHGRN "OFFICIAL PRINTF\n" reset);
 	printf(BHWHT "TIS MINE PRINTF\n" reset);
+	sleep(1);
 
 #ifdef TEST_C
 
@@ -894,9 +895,9 @@ int	main(void)
 #endif
 
 	sleep(1);
-	printf(BHCYN "************************************************************\n" reset);
-	printf(BHCYN "*                          FINISHED! gg                    *\n" reset);
-	printf(BHCYN "************************************************************\n" reset);
+	printf(BHCYN "  GG GG GG GG GG GG GG GG GG GG GG GG GG GG GG GG GG GG GG  \n" reset);
+	printf(BHCYN "  GG                       FINISHED!                    GG  \n" reset);
+	printf(BHCYN "  GG GG GG GG GG GG GG GG GG GG GG GG GG GG GG GG GG GG GG  \n" reset);
 	printf("\n");
 	
 	// while (1)

@@ -1,30 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_utoa.c                                          :+:    :+:            */
+/*   pf_utoa.c                                          :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: abeznik <abeznik@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/01 13:37:14 by abeznik       #+#    #+#                 */
-/*   Updated: 2021/10/04 18:05:06 by abeznik       ########   odam.nl         */
+/*   Updated: 2021/10/04 21:42:04 by anonymous     ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "utils.h"
+#include "../includes/libftprintf.h"
 
 static size_t	ft_uintlen(unsigned int ui)
 {
-	size_t			i;
+	size_t			len;
 	unsigned int	num;
 
-	i = 0;
+	len = 0;
 	num = ui;
 	while (num > 0)
 	{
 		num /= 10;
-		i++;
+		len++;
 	}
-	return (i);
+	return (len);
 }
 
 char	*ft_utoa(unsigned int ui)

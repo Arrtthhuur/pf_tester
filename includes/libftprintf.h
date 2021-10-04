@@ -6,15 +6,14 @@
 /*   By: abeznik <abeznik@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/20 18:43:17 by abeznik       #+#    #+#                 */
-/*   Updated: 2021/10/04 15:16:25 by abeznik       ########   odam.nl         */
+/*   Updated: 2021/10/04 22:05:19 by anonymous     ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFTPRINTF_H
 # define LIBFTPRINTF_H
 
-# include "../utils/utils.h"
-
+# include "utils.h"
 # include <stdarg.h>
 
 int					ft_printf(const char *str, ...);
@@ -38,5 +37,13 @@ int					ft_diprintf(va_list args);
 int					ft_pprintf(va_list args);
 
 int					ft_uxXprintf(va_list args, const char *fmt, int len);
+
+int					ft_uprintf(unsigned int ui);
+
+int					ft_hex_conv(unsigned int decimalnum, int format);
+
+int					ft_hexlong_conv(unsigned long long decimalnum);
+
+char				*ft_utoa(unsigned int ui);
 
 #endif

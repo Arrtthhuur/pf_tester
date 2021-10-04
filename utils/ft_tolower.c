@@ -6,11 +6,9 @@
 /*   By: abeznik <abeznik@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/26 14:20:05 by abeznik       #+#    #+#                 */
-/*   Updated: 2021/10/03 16:21:51 by abeznik       ########   odam.nl         */
+/*   Updated: 2021/10/04 22:30:12 by anonymous     ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "utils.h"
 
 int	ft_tolower(int c)
 {
