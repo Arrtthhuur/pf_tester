@@ -6,7 +6,7 @@
 #    By: abeznik <abeznik@student.codam.nl>           +#+                      #
 #                                                    +#+                       #
 #    Created: 2021/10/03 15:23:47 by abeznik       #+#    #+#                  #
-#    Updated: 2021/10/04 22:21:31 by anonymous     ########   odam.nl          #
+#    Updated: 2021/10/04 22:37:58 by anonymous     ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,8 +18,8 @@ SOURCES	=	ft_printf.c \
 			pf_conversions.c \
 			pf_hex_conv.c \
 			pf_hexlong_conv.c \
-			pf_print_format.c \
-			pf_print_u.c \
+			pf_format_print.c \
+			pf_u_print.c \
 			pf_utoa.c \
 
 SRC_DIR	=	srcs
