@@ -6,11 +6,12 @@
 /*   By: abeznik <abeznik@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/09/29 18:39:38 by abeznik       #+#    #+#                 */
-/*   Updated: 2021/10/03 19:14:56 by abeznik       ########   odam.nl         */
+/*   Updated: 2021/10/04 18:36:09 by abeznik       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "utils.h"
+#include <stdio.h>
 
 static int	ft_print_hex(char *hexadecimalnum, int j, int format)
 {
@@ -34,6 +35,7 @@ int	ft_hex_conv(unsigned int decimalnum, int format)
 	unsigned int		remainder;
 	int					j;
 	char				hexadecimalnum[100];
+	int					count;
 
 	j = 0;
 	quotient = decimalnum;
@@ -48,9 +50,8 @@ int	ft_hex_conv(unsigned int decimalnum, int format)
 		j++;
 		quotient = quotient / 16;
 	}
-	if (decimalnum == 0)
-		ft_putchar('0');
-	else
-		ft_print_hex(hexadecimalnum, j, format);
-	return (0);
+	hexadecimalnum[j] = '\0';
+	count = ft_strlen(hexadecimalnum);
+	ft_print_hex(hexadecimalnum, j, format);
+	return (count);
 }

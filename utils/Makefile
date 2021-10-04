@@ -6,7 +6,7 @@
 #    By: abeznik <abeznik@student.codam.nl>           +#+                      #
 #                                                    +#+                       #
 #    Created: 2021/10/03 16:11:35 by abeznik       #+#    #+#                  #
-#    Updated: 2021/10/03 17:52:08 by abeznik       ########   odam.nl          #
+#    Updated: 2021/10/04 18:48:37 by abeznik       ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,6 +20,9 @@ SOURCES	=	ft_putchar.c \
 			ft_tolower.c \
 			ft_itoa.c \
 			ft_utoa.c \
+			ft_strlen.c \
+			ft_intlen.c \
+			pf_uprint.c \
 
 OBJS	=	$(SOURCES:.c=.o)
 

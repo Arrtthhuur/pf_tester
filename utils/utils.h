@@ -6,7 +6,7 @@
 /*   By: abeznik <abeznik@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/09/28 15:53:54 by abeznik       #+#    #+#                 */
-/*   Updated: 2021/10/03 16:17:21 by abeznik       ########   odam.nl         */
+/*   Updated: 2021/10/04 18:48:29 by abeznik       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,11 @@ char	*ft_itoa(int n);
 char	*ft_utoa(unsigned int ui);
 
 int		ft_hexlong_conv(unsigned long long decimalnum);
+
+size_t	ft_strlen(const char *s);
+
+size_t	ft_intlen(long n);
+
+int		pf_uprint(unsigned int ui);
 
 #endif

@@ -1,42 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_itoa.c                                          :+:    :+:            */
+/*   pf_uprint.c                                        :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: abeznik <abeznik@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/11/02 11:48:57 by abeznik       #+#    #+#                 */
-/*   Updated: 2021/10/04 15:15:39 by abeznik       ########   odam.nl         */
+/*   Created: 2021/10/04 18:46:11 by abeznik       #+#    #+#                 */
+/*   Updated: 2021/10/04 18:50:26 by abeznik       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "utils.h"
 
-char	*ft_itoa(int n)
+int	pf_uprint(unsigned int ui)
 {
-	char			*ptr;
-	size_t			len;
-	unsigned int	num;
+	int		count;
+	char	*ret;
 
-	len = ft_intlen(n);
-	ptr = (char *)malloc((len + 1) * sizeof(char));
-	if (!ptr)
-		return (NULL);
-	ptr[len] = '\0';
-	if (n < 0)
-	{
-		num = n * -1;
-		ptr[0] = '-';
-	}
-	else
-		num = n;
-	if (n == 0)
-		ptr[0] = '0';
-	while (num > 0)
-	{
-		len--;
-		ptr[len] = num % 10 + '0';
-		num /= 10;
-	}
-	return (ptr);
+	ret = ft_utoa(ui);
+	ft_putstr(ret);
+	count = ft_strlen(ret);
+	free(ret);
+	return (count);
 }

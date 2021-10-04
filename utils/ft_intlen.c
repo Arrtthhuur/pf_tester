@@ -1,42 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_itoa.c                                          :+:    :+:            */
+/*   ft_intlen.c                                        :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: abeznik <abeznik@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/11/02 11:48:57 by abeznik       #+#    #+#                 */
-/*   Updated: 2021/10/04 15:15:39 by abeznik       ########   odam.nl         */
+/*   Created: 2021/10/04 15:10:10 by abeznik       #+#    #+#                 */
+/*   Updated: 2021/10/04 15:17:35 by abeznik       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "utils.h"
 
-char	*ft_itoa(int n)
+size_t	ft_intlen(long n)
 {
-	char			*ptr;
 	size_t			len;
 	unsigned int	num;
 
-	len = ft_intlen(n);
-	ptr = (char *)malloc((len + 1) * sizeof(char));
-	if (!ptr)
-		return (NULL);
-	ptr[len] = '\0';
-	if (n < 0)
+	len = 0;
+	if (n <= 0)
 	{
 		num = n * -1;
-		ptr[0] = '-';
+		len++;
 	}
 	else
 		num = n;
-	if (n == 0)
-		ptr[0] = '0';
 	while (num > 0)
 	{
-		len--;
-		ptr[len] = num % 10 + '0';
 		num /= 10;
+		len++;
 	}
-	return (ptr);
+	return (len);
 }

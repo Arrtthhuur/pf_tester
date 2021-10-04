@@ -1,42 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_itoa.c                                          :+:    :+:            */
+/*   ft_strlen.c                                        :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: abeznik <abeznik@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/11/02 11:48:57 by abeznik       #+#    #+#                 */
-/*   Updated: 2021/10/04 15:15:39 by abeznik       ########   odam.nl         */
+/*   Created: 2021/10/04 14:54:43 by abeznik       #+#    #+#                 */
+/*   Updated: 2021/10/04 14:55:16 by abeznik       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "utils.h"
 
-char	*ft_itoa(int n)
+size_t	ft_strlen(const char *s)
 {
-	char			*ptr;
-	size_t			len;
-	unsigned int	num;
+	size_t	len;
 
-	len = ft_intlen(n);
-	ptr = (char *)malloc((len + 1) * sizeof(char));
-	if (!ptr)
-		return (NULL);
-	ptr[len] = '\0';
-	if (n < 0)
-	{
-		num = n * -1;
-		ptr[0] = '-';
-	}
-	else
-		num = n;
-	if (n == 0)
-		ptr[0] = '0';
-	while (num > 0)
-	{
-		len--;
-		ptr[len] = num % 10 + '0';
-		num /= 10;
-	}
-	return (ptr);
+	len = 0;
+	while (s[len])
+		len++;
+	return (len);
 }
