@@ -1,4 +1,4 @@
-# pf_tester - The (un)official ft_printf Tester 
+# pf_tester - The (un)Official ft_printf Tester 
 
 This repository contains a makefile with different rules to test your ft_printf project.
 The makefile will do the following tests :
