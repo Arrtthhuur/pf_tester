@@ -3,11 +3,11 @@
 This repository contains a makefile with different rules to test your ft_printf project.
 The makefile will do the following tests :
 
-- Check thoroughly c s d u i p x X % conversions
+- Check thoroughly `c s d i u x X p %` conversions
 - Check for memory leaks
 - Simple checks
 
-:warning:All the tests made are not the official tests:warning:
+:warning: All the tests made are not the official tests :warning:
 
 ## Installation
 
