@@ -6,7 +6,7 @@
 #    By: abeznik <abeznik@student.codam.nl>           +#+                      #
 #                                                    +#+                       #
 #    Created: 2021/10/03 15:23:47 by abeznik       #+#    #+#                  #
-#    Updated: 2021/10/06 22:01:14 by anonymous     ########   odam.nl          #
+#    Updated: 2021/10/06 22:04:23 by anonymous     ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -66,6 +66,7 @@ debug:	all
 
 clean:
 	$(RM) $(OBJS)
+	rm -rf $(OBJ_DIR)
 
 fclean: clean
 	$(RM) $(NAME)
@@ -178,4 +179,4 @@ coffee:
 	@echo '                      """------"""'
 	@echo "Mmmmmh your coffee is so hot right now *puts hands around it*"
 
-.PHONY: fclean re norme all clean
+.PHONY: fclean re all clean
