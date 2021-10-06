@@ -31,7 +31,7 @@ Go to the directory where you cloned and run one of the following commands:
 
 ### Full tests
 
-Tests c s d i u p x X % conversions against the official printf.
+Tests `c s d i u x X p %` conversions against the official printf.
 
 ```bash
 make tester
