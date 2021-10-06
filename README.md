@@ -51,13 +51,13 @@ In the `pf_tester.c`, you can comment the `#define TEST_` to remove a specific c
 
 `i` : INT_MAX and INT_MIN.
 
-`u` : INT_MAX, INT_MIN and UINT_MAX.
+`u` : Negatives and UINT_MAX.
 
-`p` : INT_MAX, INT_MIN and UINT_MAX.
+`x` : UINT_MAX.
 
-`x` : INT_MAX, INT_MIN and UINT_MAX.
+`X` : UINT_MAX.
 
-`X` : INT_MAX, INT_MIN and UINT_MAX.
+`p` : Negative, null, UINT_MAX and ULLONG_MAX.
 
 ### Small tests
 
@@ -83,9 +83,4 @@ leaks a.out
 ```
 
 ## Contributing
-Any suggestions or bugs reporting ? Contact abeznik@student.codam.nl
-
-## Support
-Slack: abeznik
-
-Email: abeznik@student.codam.nl
+Any suggestions, contributions or bugs reporting ? Contact abeznik@student.codam.nl
