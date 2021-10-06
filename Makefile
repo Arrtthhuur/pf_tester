@@ -6,7 +6,7 @@
 #    By: abeznik <abeznik@student.codam.nl>           +#+                      #
 #                                                    +#+                       #
 #    Created: 2021/10/03 15:23:47 by abeznik       #+#    #+#                  #
-#    Updated: 2021/10/06 16:51:46 by abeznik       ########   odam.nl          #
+#    Updated: 2021/10/06 22:01:14 by anonymous     ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,9 +16,16 @@ SOURCES	=	pf_leaks.c \
 			pf_main.c \
 			pf_tester.c \
 
-OBJS 	=	$(SOURCES:.c=.o)
+SRC_DIR	=	srcs
 
-PRINTF	=	../ft_printf/
+OBJ_DIR	=	obj
+
+HEADER	=	includes
+
+PRINTF	=	../ft_printf
+
+SRCS 	=	$(addprefix $(SRC_DIR)/,$(SOURCES))
+OBJS 	=	$(patsubst %, $(OBJ_DIR)/srcs/%, $(SOURCES:.c=.o))
 
 CC		=	gcc
 RM		=	rm -f
@@ -28,24 +35,33 @@ all:		$(NAME)
 $(NAME):	$(OBJS)
 	ar cr $(NAME) $(OBJS)
 
+$(OBJ_DIR)/srcs/%.o: $(SRC_DIR)/%.c
+	@mkdir -p obj/srcs
+	$(CC) -c -I $(HEADER) -o $@ $<
+	
 tester:	all
-	$(CC) pf_tester.c ../ft_printf/libftprintf.a
+	make -C $(PRINTF)/ all
+	$(CC) $(OBJ_DIR)/srcs/pf_tester.o $(PRINTF)/libftprintf.a
 	./a.out
 
 main:	all
-	$(CC) pf_tester.c ../ft_printf/libftprintf.a
+	make -C $(PRINTF)/ all
+	$(CC) $(OBJ_DIR)/srcs/pf_main.o $(PRINTF)/libftprintf.a
 	./a.out
 
 leaks:	all
-	$(CC) -g $(NAME) $(TST_DIR)/pf_leaks.c
+	make -C $(PRINTF)/ all
+	$(CC) $(OBJ_DIR)/srcs/pf_leaks.o $(PRINTF)/libftprintf.a
 	./a.out
 
-debug:	all
-	$(CC) -g3 $(SRCS) $(UTLS) $(TST_DIR)/pf_tester.c
+db:		all
+	make -C $(PRINTF)/ all
+	$(CC) -g3 $(SRC_DIR)/pf_main.c $(PRINTF)/libftprintf.a
 	lldb a.out
 
-debug1:	all
-	$(CC) -g3 $(SRCS) $(UTLS) $(TST_DIR)/pf_main.c
+debug:	all
+	make -C $(PRINTF)/ all
+	$(CC) -g3 $(SRC_DIR)/pf_tester.c $(PRINTF)/libftprintf.a
 	lldb a.out
 
 clean:
@@ -56,7 +72,6 @@ fclean: clean
 
 del:	fclean
 	$(RM) *.out
-	$(RM) *.o
 	rm -rf *.dSYM
 
 re: fclean all

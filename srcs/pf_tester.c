@@ -6,11 +6,13 @@
 /*   By: abeznik <abeznik@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/09/27 12:32:53 by abeznik       #+#    #+#                 */
-/*   Updated: 2021/10/06 16:47:19 by abeznik       ########   odam.nl         */
+/*   Updated: 2021/10/06 21:51:18 by anonymous     ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ANSI-color-codes.h"
+#include "../../ft_printf/includes/libftprintf.h"
+
+#include "../includes/ANSI-color-codes.h"
 
 #include <unistd.h>
 #include <stdio.h>
