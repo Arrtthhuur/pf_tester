@@ -12,9 +12,7 @@
 
 NAME	=	tester.a
 
-SOURCES	=	pf_leaks.c \
-			pf_main.c \
-			pf_tester.c \
+SOURCES	=	pf_tester.c \
 
 SRC_DIR	=	srcs
 
@@ -43,21 +41,6 @@ tester:	all
 	make -C $(PRINTF)/ all
 	$(CC) $(OBJ_DIR)/srcs/pf_tester.o $(PRINTF)/libftprintf.a
 	./a.out
-
-main:	all
-	make -C $(PRINTF)/ all
-	$(CC) $(OBJ_DIR)/srcs/pf_main.o $(PRINTF)/libftprintf.a
-	./a.out
-
-leaks:	all
-	make -C $(PRINTF)/ all
-	$(CC) $(OBJ_DIR)/srcs/pf_leaks.o $(PRINTF)/libftprintf.a
-	./a.out
-
-db:		all
-	make -C $(PRINTF)/ all
-	$(CC) -g3 $(SRC_DIR)/pf_main.c $(PRINTF)/libftprintf.a
-	lldb a.out
 
 debug:	all
 	make -C $(PRINTF)/ all
