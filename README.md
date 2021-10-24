@@ -4,8 +4,6 @@ This repository contains a makefile with different rules to test your ft_printf 
 The makefile will do the following tests :
 
 - Check thoroughly `c s d i u x X p %` conversions
-- Check for memory leaks
-- Simple checks
 
 :warning: All the tests made are not the official tests :warning:
 
@@ -58,29 +56,6 @@ In the `pf_tester.c`, you can comment the `#define TEST_` to remove a specific c
 `X` : UINT_MAX.
 
 `p` : Negative, null, UINT_MAX and ULLONG_MAX.
-
-### Small tests
-
-Edit `main.c` as pleased to test a specific conversion.
-
-```bash
-make main
-```
-
-### Leak tests
-
-Detects memory leaks.
-
-```bash
-make leaks
-```
-This will make an infinite loop, causing the program to get "stuck".
-
-One has to open another terminal in the same directory and run the command:
-
-```bash
-leaks a.out
-```
 
 ## Contributing
 Any suggestions, contributions or bugs reporting ? Contact abeznik@student.codam.nl
